@@ -1,0 +1,1145 @@
+Analysis & Synthesis report for fechaduratop
+Sat Aug 30 13:47:19 2025
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|state
+  9. State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|estado
+ 10. State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar|ESTADO_ATUAL
+ 11. State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant
+ 12. State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado
+ 13. State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|ESTADO_ATUAL
+ 14. Registers Removed During Synthesis
+ 15. Removed Registers Triggering Further Register Optimizations
+ 16. General Register Statistics
+ 17. Inverted Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Parameter Settings for User Entity Instance: FechaduraTop:comb_3|resetHold5s:ResetLogica
+ 20. Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod3
+ 21. Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod1
+ 22. Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Div1
+ 23. Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod2
+ 24. Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Div0
+ 25. Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod0
+ 26. Port Connectivity Checks: "FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Aug 30 13:47:19 2025           ;
+; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                   ; fechaduratop                                    ;
+; Top-level Entity Name           ; DE1_SOC_golden_top                              ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 507                                             ;
+; Total pins                      ; 241                                             ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; DE1_SOC_golden_top ; fechaduratop       ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; setup.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv                      ;         ;
+; operacional.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv                ;         ;
+; DE1_SOC_golden_top.sv            ; yes             ; User SystemVerilog HDL File  ; C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv         ;         ;
+; auxiliar.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv                   ;         ;
+; fechaduratop.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/joaov/OneDrive/Documentos/fechaduratop/fechaduratop.sv               ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal241.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc      ;         ;
+; db/lpm_divide_72m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/joaov/OneDrive/Documentos/fechaduratop/db/lpm_divide_72m.tdf         ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/joaov/OneDrive/Documentos/fechaduratop/db/sign_div_unsign_akh.tdf    ;         ;
+; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/joaov/OneDrive/Documentos/fechaduratop/db/alt_u_div_qse.tdf          ;         ;
+; db/lpm_divide_4am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/joaov/OneDrive/Documentos/fechaduratop/db/lpm_divide_4am.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                         ;
++---------------------------------------------+-------------------------------------------------------+
+; Resource                                    ; Usage                                                 ;
++---------------------------------------------+-------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 507                                                   ;
+;                                             ;                                                       ;
+; Combinational ALUT usage for logic          ; 828                                                   ;
+;     -- 7 input functions                    ; 10                                                    ;
+;     -- 6 input functions                    ; 97                                                    ;
+;     -- 5 input functions                    ; 87                                                    ;
+;     -- 4 input functions                    ; 149                                                   ;
+;     -- <=3 input functions                  ; 485                                                   ;
+;                                             ;                                                       ;
+; Dedicated logic registers                   ; 507                                                   ;
+;                                             ;                                                       ;
+; I/O pins                                    ; 241                                                   ;
+;                                             ;                                                       ;
+; Total DSP Blocks                            ; 0                                                     ;
+;                                             ;                                                       ;
+; Maximum fan-out node                        ; FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i ;
+; Maximum fan-out                             ; 446                                                   ;
+; Total fan-out                               ; 5201                                                  ;
+; Average fan-out                             ; 2.72                                                  ;
++---------------------------------------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                              ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                 ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |DE1_SOC_golden_top                          ; 828 (0)             ; 507 (0)                   ; 0                 ; 0          ; 241  ; 0            ; |DE1_SOC_golden_top                                                                                                                                 ; DE1_SOC_golden_top  ; work         ;
+;    |FechaduraTop:comb_3|                     ; 828 (19)            ; 507 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3                                                                                                             ; FechaduraTop        ; work         ;
+;       |SixDigit7SegCtrl:Displays|            ; 38 (1)              ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|SixDigit7SegCtrl:Displays                                                                                   ; SixDigit7SegCtrl    ; work         ;
+;          |BCDto7SEGMENT:conv0|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|BCDto7SEGMENT:conv0                                                               ; BCDto7SEGMENT       ; work         ;
+;          |BCDto7SEGMENT:conv1|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|BCDto7SEGMENT:conv1                                                               ; BCDto7SEGMENT       ; work         ;
+;          |BCDto7SEGMENT:conv2|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|BCDto7SEGMENT:conv2                                                               ; BCDto7SEGMENT       ; work         ;
+;          |BCDto7SEGMENT:conv3|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|BCDto7SEGMENT:conv3                                                               ; BCDto7SEGMENT       ; work         ;
+;          |BCDto7SEGMENT:conv4|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|BCDto7SEGMENT:conv4                                                               ; BCDto7SEGMENT       ; work         ;
+;          |BCDto7SEGMENT:conv5|               ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|BCDto7SEGMENT:conv5                                                               ; BCDto7SEGMENT       ; work         ;
+;       |divfreq:DivisorDeFrequencia|          ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|divfreq:DivisorDeFrequencia                                                                                 ; divfreq             ; work         ;
+;       |matrixKeyDecoder:Teclado|             ; 57 (57)             ; 46 (46)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|matrixKeyDecoder:Teclado                                                                                    ; matrixKeyDecoder    ; work         ;
+;       |operacional:Operacional|              ; 263 (128)           ; 238 (159)                 ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional                                                                                     ; operacional         ; work         ;
+;          |montar_pin:montar|                 ; 33 (33)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar                                                                   ; montar_pin          ; work         ;
+;          |update_master:atualizar|           ; 16 (16)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar                                                             ; update_master       ; work         ;
+;          |verificar_senha:verifica|          ; 86 (86)             ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica                                                            ; verificar_senha     ; work         ;
+;       |resetHold5s:ResetLogica|              ; 38 (38)             ; 29 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|resetHold5s:ResetLogica                                                                                     ; resetHold5s         ; work         ;
+;       |setup:Setup|                          ; 372 (182)           ; 139 (139)                 ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup                                                                                                 ; setup               ; work         ;
+;          |lpm_divide:Div0|                   ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_4am:auto_generated|  ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
+;                |sign_div_unsign_akh:divider| ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                   |alt_u_div_qse:divider|    ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;          |lpm_divide:Div1|                   ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_4am:auto_generated|  ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Div1|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
+;                |sign_div_unsign_akh:divider| ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                   |alt_u_div_qse:divider|    ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;          |lpm_divide:Mod0|                   ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_72m:auto_generated|  ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod0|lpm_divide_72m:auto_generated                                                   ; lpm_divide_72m      ; work         ;
+;                |sign_div_unsign_akh:divider| ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                   |alt_u_div_qse:divider|    ; 23 (23)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;          |lpm_divide:Mod1|                   ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_72m:auto_generated|  ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod1|lpm_divide_72m:auto_generated                                                   ; lpm_divide_72m      ; work         ;
+;                |sign_div_unsign_akh:divider| ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod1|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                   |alt_u_div_qse:divider|    ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod1|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;          |lpm_divide:Mod2|                   ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_72m:auto_generated|  ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod2|lpm_divide_72m:auto_generated                                                   ; lpm_divide_72m      ; work         ;
+;                |sign_div_unsign_akh:divider| ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod2|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                   |alt_u_div_qse:divider|    ; 23 (23)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod2|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;          |lpm_divide:Mod3|                   ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_72m:auto_generated|  ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod3|lpm_divide_72m:auto_generated                                                   ; lpm_divide_72m      ; work         ;
+;                |sign_div_unsign_akh:divider| ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod3|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                   |alt_u_div_qse:divider|    ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod3|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|state                                                                                                                                                                                                                                                                                                                                                                                                      ;
++-------------------------+--------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+------------------------+------------------------+-----------------------+-----------------------+-------------------------+-------------------------+------------------+--------------+
+; Name                    ; state.S_DONE ; state.S_PIN4_SHOW_VAL ; state.S_PIN4_WAIT_ACT ; state.S_PIN4_SHOW_ACT ; state.S_PIN3_SHOW_VAL ; state.S_PIN3_WAIT_ACT ; state.S_PIN3_SHOW_ACT ; state.S_PIN2_SHOW_VAL ; state.S_PIN2_WAIT_ACT ; state.S_PIN2_SHOW_ACT ; state.S_PIN1_SHOW_VAL ; state.S_TRAV_TIME_EDIT ; state.S_TRAV_TIME_SHOW ; state.S_BIP_TIME_EDIT ; state.S_BIP_TIME_SHOW ; state.S_BIP_TOGGLE_WAIT ; state.S_BIP_TOGGLE_SHOW ; state.S_LOAD_OLD ; state.S_IDLE ;
++-------------------------+--------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+------------------------+------------------------+-----------------------+-----------------------+-------------------------+-------------------------+------------------+--------------+
+; state.S_IDLE            ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 0            ;
+; state.S_LOAD_OLD        ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 1                ; 1            ;
+; state.S_BIP_TOGGLE_SHOW ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 1                       ; 0                ; 1            ;
+; state.S_BIP_TOGGLE_WAIT ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 1                       ; 0                       ; 0                ; 1            ;
+; state.S_BIP_TIME_SHOW   ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 1                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_BIP_TIME_EDIT   ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 1                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_TRAV_TIME_SHOW  ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 1                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_TRAV_TIME_EDIT  ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN1_SHOW_VAL   ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN2_SHOW_ACT   ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN2_WAIT_ACT   ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN2_SHOW_VAL   ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN3_SHOW_ACT   ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN3_WAIT_ACT   ; 0            ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN3_SHOW_VAL   ; 0            ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN4_SHOW_ACT   ; 0            ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN4_WAIT_ACT   ; 0            ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_PIN4_SHOW_VAL   ; 0            ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
+; state.S_DONE            ; 1            ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ; 0                      ; 0                     ; 0                     ; 0                       ; 0                       ; 0                ; 1            ;
++-------------------------+--------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+------------------------+------------------------+-----------------------+-----------------------+-------------------------+-------------------------+------------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|estado                                                                                                                                                                             ;
++------------------------+---------------------+--------------+----------------------+----------------------+---------------------+-----------------+------------------+--------------+---------------+------------------------+-------------------+-----------------+
+; Name                   ; estado.ESPERA_FALHA ; estado.FALHA ; estado.UPDATE_MASTER ; estado.PORTA_FECHADA ; estado.PORTA_ABERTA ; estado.TRAVA_ON ; estado.TRAVA_OFF ; estado.SETUP ; estado.ESPERA ; estado.VERIFICAR_SENHA ; estado.MONTAR_PIN ; estado.RESETADO ;
++------------------------+---------------------+--------------+----------------------+----------------------+---------------------+-----------------+------------------+--------------+---------------+------------------------+-------------------+-----------------+
+; estado.RESETADO        ; 0                   ; 0            ; 0                    ; 0                    ; 0                   ; 0               ; 0                ; 0            ; 0             ; 0                      ; 0                 ; 0               ;
+; estado.MONTAR_PIN      ; 0                   ; 0            ; 0                    ; 0                    ; 0                   ; 0               ; 0                ; 0            ; 0             ; 0                      ; 1                 ; 1               ;
+; estado.VERIFICAR_SENHA ; 0                   ; 0            ; 0                    ; 0                    ; 0                   ; 0               ; 0                ; 0            ; 0             ; 1                      ; 0                 ; 1               ;
+; estado.ESPERA          ; 0                   ; 0            ; 0                    ; 0                    ; 0                   ; 0               ; 0                ; 0            ; 1             ; 0                      ; 0                 ; 1               ;
+; estado.SETUP           ; 0                   ; 0            ; 0                    ; 0                    ; 0                   ; 0               ; 0                ; 1            ; 0             ; 0                      ; 0                 ; 1               ;
+; estado.TRAVA_OFF       ; 0                   ; 0            ; 0                    ; 0                    ; 0                   ; 0               ; 1                ; 0            ; 0             ; 0                      ; 0                 ; 1               ;
+; estado.TRAVA_ON        ; 0                   ; 0            ; 0                    ; 0                    ; 0                   ; 1               ; 0                ; 0            ; 0             ; 0                      ; 0                 ; 1               ;
+; estado.PORTA_ABERTA    ; 0                   ; 0            ; 0                    ; 0                    ; 1                   ; 0               ; 0                ; 0            ; 0             ; 0                      ; 0                 ; 1               ;
+; estado.PORTA_FECHADA   ; 0                   ; 0            ; 0                    ; 1                    ; 0                   ; 0               ; 0                ; 0            ; 0             ; 0                      ; 0                 ; 1               ;
+; estado.UPDATE_MASTER   ; 0                   ; 0            ; 1                    ; 0                    ; 0                   ; 0               ; 0                ; 0            ; 0             ; 0                      ; 0                 ; 1               ;
+; estado.FALHA           ; 0                   ; 1            ; 0                    ; 0                    ; 0                   ; 0               ; 0                ; 0            ; 0             ; 0                      ; 0                 ; 1               ;
+; estado.ESPERA_FALHA    ; 1                   ; 0            ; 0                    ; 0                    ; 0                   ; 0               ; 0                ; 0            ; 0             ; 0                      ; 0                 ; 1               ;
++------------------------+---------------------+--------------+----------------------+----------------------+---------------------+-----------------+------------------+--------------+---------------+------------------------+-------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar|ESTADO_ATUAL ;
++------------------------+--------------------+-------------------+------------------------+---------------------------+
+; Name                   ; ESTADO_ATUAL.FINAL ; ESTADO_ATUAL.TEMP ; ESTADO_ATUAL.ATUALIZAR ; ESTADO_ATUAL.INICIAL      ;
++------------------------+--------------------+-------------------+------------------------+---------------------------+
+; ESTADO_ATUAL.INICIAL   ; 0                  ; 0                 ; 0                      ; 0                         ;
+; ESTADO_ATUAL.ATUALIZAR ; 0                  ; 0                 ; 1                      ; 1                         ;
+; ESTADO_ATUAL.TEMP      ; 0                  ; 1                 ; 0                      ; 1                         ;
+; ESTADO_ATUAL.FINAL     ; 1                  ; 0                 ; 0                      ; 1                         ;
++------------------------+--------------------+-------------------+------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant                                                                                                                                                                                                                                         ;
++--------------------------+-----------------+-----------------------+----------------------+------------------------+---------------------+-----------------------+----------------------+-------------------------+----------------------+--------------------------+----------------------+----------------------+-------------------+---------------------+
+; Name                     ; estado_ant.TEMP ; estado_ant.HOLD_FLAGS ; estado_ant.PIN_VALID ; estado_ant.UPDATE_FLAG ; estado_ant.PIN_FLAG ; estado_ant.SETUP_FLAG ; estado_ant.FAIL_FLAG ; estado_ant.MASTER_VALID ; estado_ant.MASTER_OK ; estado_ant.MASTER_UPDATE ; estado_ant.CHECK_PIN ; estado_ant.VERIFICAR ; estado_ant.ESPERA ; estado_ant.RESETADO ;
++--------------------------+-----------------+-----------------------+----------------------+------------------------+---------------------+-----------------------+----------------------+-------------------------+----------------------+--------------------------+----------------------+----------------------+-------------------+---------------------+
+; estado_ant.RESETADO      ; 0               ; 0                     ; 0                    ; 0                      ; 0                   ; 0                     ; 0                    ; 0                       ; 0                    ; 0                        ; 0                    ; 0                    ; 0                 ; 0                   ;
+; estado_ant.ESPERA        ; 0               ; 0                     ; 0                    ; 0                      ; 0                   ; 0                     ; 0                    ; 0                       ; 0                    ; 0                        ; 0                    ; 0                    ; 1                 ; 1                   ;
+; estado_ant.VERIFICAR     ; 0               ; 0                     ; 0                    ; 0                      ; 0                   ; 0                     ; 0                    ; 0                       ; 0                    ; 0                        ; 0                    ; 1                    ; 0                 ; 1                   ;
+; estado_ant.CHECK_PIN     ; 0               ; 0                     ; 0                    ; 0                      ; 0                   ; 0                     ; 0                    ; 0                       ; 0                    ; 0                        ; 1                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.MASTER_UPDATE ; 0               ; 0                     ; 0                    ; 0                      ; 0                   ; 0                     ; 0                    ; 0                       ; 0                    ; 1                        ; 0                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.MASTER_OK     ; 0               ; 0                     ; 0                    ; 0                      ; 0                   ; 0                     ; 0                    ; 0                       ; 1                    ; 0                        ; 0                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.MASTER_VALID  ; 0               ; 0                     ; 0                    ; 0                      ; 0                   ; 0                     ; 0                    ; 1                       ; 0                    ; 0                        ; 0                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.FAIL_FLAG     ; 0               ; 0                     ; 0                    ; 0                      ; 0                   ; 0                     ; 1                    ; 0                       ; 0                    ; 0                        ; 0                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.SETUP_FLAG    ; 0               ; 0                     ; 0                    ; 0                      ; 0                   ; 1                     ; 0                    ; 0                       ; 0                    ; 0                        ; 0                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.PIN_FLAG      ; 0               ; 0                     ; 0                    ; 0                      ; 1                   ; 0                     ; 0                    ; 0                       ; 0                    ; 0                        ; 0                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.UPDATE_FLAG   ; 0               ; 0                     ; 0                    ; 1                      ; 0                   ; 0                     ; 0                    ; 0                       ; 0                    ; 0                        ; 0                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.PIN_VALID     ; 0               ; 0                     ; 1                    ; 0                      ; 0                   ; 0                     ; 0                    ; 0                       ; 0                    ; 0                        ; 0                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.HOLD_FLAGS    ; 0               ; 1                     ; 0                    ; 0                      ; 0                   ; 0                     ; 0                    ; 0                       ; 0                    ; 0                        ; 0                    ; 0                    ; 0                 ; 1                   ;
+; estado_ant.TEMP          ; 1               ; 0                     ; 0                    ; 0                      ; 0                   ; 0                     ; 0                    ; 0                       ; 0                    ; 0                        ; 0                    ; 0                    ; 0                 ; 1                   ;
++--------------------------+-----------------+-----------------------+----------------------+------------------------+---------------------+-----------------------+----------------------+-------------------------+----------------------+--------------------------+----------------------+----------------------+-------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado                                                                                                                                                                                 ;
++----------------------+-------------+-------------------+------------------+--------------------+-----------------+-------------------+------------------+---------------------+------------------+----------------------+------------------+------------------+---------------+-----------------+
+; Name                 ; estado.TEMP ; estado.HOLD_FLAGS ; estado.PIN_VALID ; estado.UPDATE_FLAG ; estado.PIN_FLAG ; estado.SETUP_FLAG ; estado.FAIL_FLAG ; estado.MASTER_VALID ; estado.MASTER_OK ; estado.MASTER_UPDATE ; estado.CHECK_PIN ; estado.VERIFICAR ; estado.ESPERA ; estado.RESETADO ;
++----------------------+-------------+-------------------+------------------+--------------------+-----------------+-------------------+------------------+---------------------+------------------+----------------------+------------------+------------------+---------------+-----------------+
+; estado.RESETADO      ; 0           ; 0                 ; 0                ; 0                  ; 0               ; 0                 ; 0                ; 0                   ; 0                ; 0                    ; 0                ; 0                ; 0             ; 0               ;
+; estado.ESPERA        ; 0           ; 0                 ; 0                ; 0                  ; 0               ; 0                 ; 0                ; 0                   ; 0                ; 0                    ; 0                ; 0                ; 1             ; 1               ;
+; estado.VERIFICAR     ; 0           ; 0                 ; 0                ; 0                  ; 0               ; 0                 ; 0                ; 0                   ; 0                ; 0                    ; 0                ; 1                ; 0             ; 1               ;
+; estado.CHECK_PIN     ; 0           ; 0                 ; 0                ; 0                  ; 0               ; 0                 ; 0                ; 0                   ; 0                ; 0                    ; 1                ; 0                ; 0             ; 1               ;
+; estado.MASTER_UPDATE ; 0           ; 0                 ; 0                ; 0                  ; 0               ; 0                 ; 0                ; 0                   ; 0                ; 1                    ; 0                ; 0                ; 0             ; 1               ;
+; estado.MASTER_OK     ; 0           ; 0                 ; 0                ; 0                  ; 0               ; 0                 ; 0                ; 0                   ; 1                ; 0                    ; 0                ; 0                ; 0             ; 1               ;
+; estado.MASTER_VALID  ; 0           ; 0                 ; 0                ; 0                  ; 0               ; 0                 ; 0                ; 1                   ; 0                ; 0                    ; 0                ; 0                ; 0             ; 1               ;
+; estado.FAIL_FLAG     ; 0           ; 0                 ; 0                ; 0                  ; 0               ; 0                 ; 1                ; 0                   ; 0                ; 0                    ; 0                ; 0                ; 0             ; 1               ;
+; estado.SETUP_FLAG    ; 0           ; 0                 ; 0                ; 0                  ; 0               ; 1                 ; 0                ; 0                   ; 0                ; 0                    ; 0                ; 0                ; 0             ; 1               ;
+; estado.PIN_FLAG      ; 0           ; 0                 ; 0                ; 0                  ; 1               ; 0                 ; 0                ; 0                   ; 0                ; 0                    ; 0                ; 0                ; 0             ; 1               ;
+; estado.UPDATE_FLAG   ; 0           ; 0                 ; 0                ; 1                  ; 0               ; 0                 ; 0                ; 0                   ; 0                ; 0                    ; 0                ; 0                ; 0             ; 1               ;
+; estado.PIN_VALID     ; 0           ; 0                 ; 1                ; 0                  ; 0               ; 0                 ; 0                ; 0                   ; 0                ; 0                    ; 0                ; 0                ; 0             ; 1               ;
+; estado.HOLD_FLAGS    ; 0           ; 1                 ; 0                ; 0                  ; 0               ; 0                 ; 0                ; 0                   ; 0                ; 0                    ; 0                ; 0                ; 0             ; 1               ;
+; estado.TEMP          ; 1           ; 0                 ; 0                ; 0                  ; 0               ; 0                 ; 0                ; 0                   ; 0                ; 0                    ; 0                ; 0                ; 0             ; 1               ;
++----------------------+-------------+-------------------+------------------+--------------------+-----------------+-------------------+------------------+---------------------+------------------+----------------------+------------------+------------------+---------------+-----------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|ESTADO_ATUAL                                       ;
++--------------------------+--------------------------+--------------------------+--------------------------+----------------------+-------------------+
+; Name                     ; ESTADO_ATUAL.HOLD_STATUS ; ESTADO_ATUAL.STATUS_TRUE ; ESTADO_ATUAL.DIGITO_LIDO ; ESTADO_ATUAL.INICIAL ; ESTADO_ATUAL.TEMP ;
++--------------------------+--------------------------+--------------------------+--------------------------+----------------------+-------------------+
+; ESTADO_ATUAL.INICIAL     ; 0                        ; 0                        ; 0                        ; 0                    ; 0                 ;
+; ESTADO_ATUAL.DIGITO_LIDO ; 0                        ; 0                        ; 1                        ; 1                    ; 0                 ;
+; ESTADO_ATUAL.STATUS_TRUE ; 0                        ; 1                        ; 0                        ; 1                    ; 0                 ;
+; ESTADO_ATUAL.HOLD_STATUS ; 1                        ; 0                        ; 0                        ; 1                    ; 0                 ;
+; ESTADO_ATUAL.TEMP        ; 0                        ; 0                        ; 0                        ; 1                    ; 1                 ;
++--------------------------+--------------------------+--------------------------+--------------------------+----------------------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                        ;
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+; Register name                                                                                 ; Reason for Removal                                                        ;
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD5[3]                                 ; Merged with FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD5[1] ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD5[3]                                                 ; Merged with FechaduraTop:comb_3|setup:Setup|bcd_r.BCD5[1]                 ;
+; FechaduraTop:comb_3|matrixKeyDecoder:Teclado|state[3..9,11..31]                               ; Merged with FechaduraTop:comb_3|matrixKeyDecoder:Teclado|state[10]        ;
+; FechaduraTop:comb_3|matrixKeyDecoder:Teclado|state[10]                                        ; Stuck at GND due to stuck port data_in                                    ;
+; FechaduraTop:comb_3|setup:Setup|cfg.bip_time[6]                                               ; Stuck at GND due to stuck port data_in                                    ;
+; FechaduraTop:comb_3|setup:Setup|cfg.tranca_aut_time[6]                                        ; Stuck at GND due to stuck port data_in                                    ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.bip_time[6]                            ; Stuck at GND due to stuck port data_in                                    ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.tranca_aut_time[6]                     ; Stuck at GND due to stuck port data_in                                    ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.RESETADO      ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.ESPERA        ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.VERIFICAR     ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.CHECK_PIN     ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.MASTER_UPDATE ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.MASTER_VALID  ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.FAIL_FLAG     ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.SETUP_FLAG    ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.PIN_FLAG      ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.UPDATE_FLAG   ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.PIN_VALID     ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.HOLD_FLAGS    ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant.TEMP          ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|setup:Setup|state~4                                                       ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|setup:Setup|state~5                                                       ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|setup:Setup|state~6                                                       ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|setup:Setup|state~7                                                       ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|setup:Setup|state~8                                                       ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|setup:Setup|state~9                                                       ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|estado~4                                          ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|estado~5                                          ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|estado~6                                          ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|estado~7                                          ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar|ESTADO_ATUAL~8            ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar|ESTADO_ATUAL~9            ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant~4             ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant~5             ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant~6             ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant~7             ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado~18                ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado~19                ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado~20                ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado~21                ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|ESTADO_ATUAL~9                  ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|ESTADO_ATUAL~10                 ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|operacional:Operacional|estado.ESPERA                                     ; Stuck at GND due to stuck port data_in                                    ;
+; FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar|ESTADO_ATUAL.FINAL        ; Lost fanout                                                               ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD5[2]                                                 ; Stuck at GND due to stuck port data_in                                    ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD5[2]                                 ; Stuck at GND due to stuck port data_in                                    ;
+; Total Number of Removed Registers = 74                                                        ;                                                                           ;
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                             ;
++------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------+
+; Register name                                                                      ; Reason for Removal        ; Registers Removed due to This Register                                                 ;
++------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------+
+; FechaduraTop:comb_3|setup:Setup|cfg.bip_time[6]                                    ; Stuck at GND              ; FechaduraTop:comb_3|operacional:Operacional|setup_data.bip_time[6]                     ;
+;                                                                                    ; due to stuck port data_in ;                                                                                        ;
+; FechaduraTop:comb_3|setup:Setup|cfg.tranca_aut_time[6]                             ; Stuck at GND              ; FechaduraTop:comb_3|operacional:Operacional|setup_data.tranca_aut_time[6]              ;
+;                                                                                    ; due to stuck port data_in ;                                                                                        ;
+; FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar|ESTADO_ATUAL~8 ; Lost Fanouts              ; FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar|ESTADO_ATUAL.FINAL ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD5[2]                                      ; Stuck at GND              ; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD5[2]                          ;
+;                                                                                    ; due to stuck port data_in ;                                                                                        ;
++------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 507   ;
+; Number of registers using Synchronous Clear  ; 139   ;
+; Number of registers using Synchronous Load   ; 79    ;
+; Number of registers using Asynchronous Clear ; 414   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 382   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                       ;
++------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                        ; Fan out ;
++------------------------------------------------------------------------------------------+---------+
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD0[0]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD1[0]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD2[0]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD3[0]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD0[1]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD0[3]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD1[1]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD1[3]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD2[1]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD2[3]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD3[1]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD3[3]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD4[0]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD4[1]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD4[3]                            ; 7       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD5[1]                            ; 4       ;
+; FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD5[0]                            ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.bip_status                        ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.bip_time[2]                       ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.bip_time[0]                       ; 2       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_en_r                                                 ; 1       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit4[1]          ; 5       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD0[1]                                            ; 4       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit4[2]          ; 5       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit4[3]          ; 5       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD0[3]                                            ; 6       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit3[1]          ; 5       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD1[1]                                            ; 5       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit3[2]          ; 5       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit3[3]          ; 5       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD1[3]                                            ; 6       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit2[1]          ; 5       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD2[1]                                            ; 3       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit2[2]          ; 5       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit2[3]          ; 5       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD2[3]                                            ; 3       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit1[1]          ; 4       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD3[1]                                            ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit1[2]          ; 4       ;
+; FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit1[3]          ; 4       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD3[3]                                            ; 2       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD4[1]                                            ; 3       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD4[3]                                            ; 2       ;
+; FechaduraTop:comb_3|setup:Setup|bcd_r.BCD5[1]                                            ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|fluxo_pos_reset                              ; 6       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.tranca_aut_time[2]                ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.tranca_aut_time[0]                ; 2       ;
+; FechaduraTop:comb_3|matrixKeyDecoder:Teclado|key_code_reg[3]                             ; 14      ;
+; FechaduraTop:comb_3|matrixKeyDecoder:Teclado|key_code_reg[1]                             ; 14      ;
+; FechaduraTop:comb_3|matrixKeyDecoder:Teclado|lin_reg[0]                                  ; 1       ;
+; FechaduraTop:comb_3|matrixKeyDecoder:Teclado|lin_reg[1]                                  ; 1       ;
+; FechaduraTop:comb_3|matrixKeyDecoder:Teclado|lin_reg[2]                                  ; 1       ;
+; FechaduraTop:comb_3|matrixKeyDecoder:Teclado|lin_reg[3]                                  ; 1       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.master_pin.digit4[2]              ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.master_pin.digit3[1]              ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.master_pin.digit3[0]              ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.master_pin.digit1[0]              ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.master_pin.digit2[1]              ; 2       ;
+; FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|senha_master_update ; 6       ;
+; FechaduraTop:comb_3|operacional:Operacional|setup_data.master_pin.status                 ; 5       ;
+; Total number of inverted registers = 60                                                  ;         ;
++------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|cont_espera_falha[15]                       ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|setup_data.master_pin.digit3[3]             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD3[2]                           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|resetHold5s:ResetLogica|sec_counter[1]                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|cont_falha[1]                               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|resetHold5s:ResetLogica|clk_counter[12]                             ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|cont_trava[2]                               ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|cont_bip[1]                                 ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|cfg.bip_time[6]                                         ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|cfg.tranca_aut_time[1]                                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|cfg.pin1.digit1[1]                                      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|cfg.pin2.digit3[2]                                      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|cfg.pin3.digit1[2]                                      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|cfg.pin4.digit1[1]                                      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|matrixKeyDecoder:Teclado|debounce_counter[20]                       ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|pin_temp.digit3[0] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit1[0]         ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|bcd_r.BCD3[0]                                           ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|bcd_r.BCD1[0]                                           ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|setup_data.master_pin.digit1[0]             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|bcd_reg.BCD0[1]                           ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|pin_out.digit2[2]         ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|bcd_r.BCD2[3]                                           ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|bcd_r.BCD1[1]                                           ;
+; 26:1               ; 2 bits    ; 34 LEs        ; 14 LEs               ; 20 LEs                 ; Yes        ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|bcd_r.BCD0[3]                                           ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|clamp_5_60                                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE1_SOC_golden_top|FechaduraTop:comb_3|matrixKeyDecoder:Teclado|row_scan_counter                           ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|Selector19                ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar|Selector2           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|Selector20                ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|Selector10         ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|Selector11         ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|Selector0                                               ;
+; 20:1               ; 5 bits    ; 65 LEs        ; 30 LEs               ; 35 LEs                 ; No         ; |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|Selector9                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FechaduraTop:comb_3|resetHold5s:ResetLogica ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; TIME_TO_RST    ; 5     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod3 ;
++------------------------+----------------+--------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                   ;
++------------------------+----------------+--------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                ;
+; CBXI_PARAMETER         ; lpm_divide_72m ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                         ;
++------------------------+----------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                   ;
++------------------------+----------------+--------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                ;
+; CBXI_PARAMETER         ; lpm_divide_72m ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                         ;
++------------------------+----------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Div1 ;
++------------------------+----------------+--------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                   ;
++------------------------+----------------+--------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                ;
+; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                         ;
++------------------------+----------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod2 ;
++------------------------+----------------+--------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                   ;
++------------------------+----------------+--------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                ;
+; CBXI_PARAMETER         ; lpm_divide_72m ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                         ;
++------------------------+----------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                   ;
++------------------------+----------------+--------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                ;
+; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                         ;
++------------------------+----------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                   ;
++------------------------+----------------+--------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                ;
+; CBXI_PARAMETER         ; lpm_divide_72m ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                         ;
++------------------------+----------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica"                              ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; senha_master_update ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 507                         ;
+;     CLR               ; 80                          ;
+;     CLR SCLR          ; 42                          ;
+;     ENA               ; 64                          ;
+;     ENA CLR           ; 143                         ;
+;     ENA CLR SCLR      ; 70                          ;
+;     ENA CLR SLD       ; 79                          ;
+;     ENA SCLR          ; 26                          ;
+;     SCLR              ; 1                           ;
+;     plain             ; 2                           ;
+; arriav_io_obuf        ; 96                          ;
+; arriav_lcell_comb     ; 837                         ;
+;     arith             ; 257                         ;
+;         0 data inputs ; 33                          ;
+;         1 data inputs ; 155                         ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 42                          ;
+;         4 data inputs ; 11                          ;
+;     extend            ; 10                          ;
+;         7 data inputs ; 10                          ;
+;     normal            ; 540                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 45                          ;
+;         2 data inputs ; 110                         ;
+;         3 data inputs ; 62                          ;
+;         4 data inputs ; 138                         ;
+;         5 data inputs ; 87                          ;
+;         6 data inputs ; 97                          ;
+;     shared            ; 30                          ;
+;         0 data inputs ; 14                          ;
+;         1 data inputs ; 16                          ;
+; boundary_port         ; 241                         ;
+;                       ;                             ;
+; Max LUT depth         ; 10.80                       ;
+; Average LUT depth     ; 3.87                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:07     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Sat Aug 30 13:46:43 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fechaduratop -c fechaduratop
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file setup.sv
+    Info (12023): Found entity 1: setup File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file operacional.sv
+    Info (12023): Found entity 1: operacional File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file de1_soc_golden_top.sv
+    Info (12023): Found entity 1: DE1_SOC_golden_top File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 54
+Info (12021): Found 8 design units, including 8 entities, in source file auxiliar.sv
+    Info (12023): Found entity 1: divfreq File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 56
+    Info (12023): Found entity 2: BCDto7SEGMENT File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 77
+    Info (12023): Found entity 3: montar_pin File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 100
+    Info (12023): Found entity 4: verificar_senha File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 177
+    Info (12023): Found entity 5: update_master File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 380
+    Info (12023): Found entity 6: matrixKeyDecoder File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 439
+    Info (12023): Found entity 7: SixDigit7SegCtrl File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 560
+    Info (12023): Found entity 8: resetHold5s File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 587
+Info (12021): Found 1 design units, including 1 entities, in source file fechaduratop.sv
+    Info (12023): Found entity 1: FechaduraTop File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/fechaduratop.sv Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at DE1_SOC_golden_top.sv(304): instance has no name File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 304
+Info (12127): Elaborating entity "DE1_SOC_golden_top" for the top level hierarchy
+Warning (10034): Output port "DRAM_ADDR" at DE1_SOC_golden_top.sv(100) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+Warning (10034): Output port "DRAM_BA" at DE1_SOC_golden_top.sv(101) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 101
+Warning (10034): Output port "LEDR[9..2]" at DE1_SOC_golden_top.sv(210) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 210
+Warning (10034): Output port "VGA_B" at DE1_SOC_golden_top.sv(237) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 237
+Warning (10034): Output port "VGA_G" at DE1_SOC_golden_top.sv(240) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 240
+Warning (10034): Output port "VGA_R" at DE1_SOC_golden_top.sv(242) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 242
+Warning (10034): Output port "ADC_CONVST" at DE1_SOC_golden_top.sv(59) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 59
+Warning (10034): Output port "ADC_DIN" at DE1_SOC_golden_top.sv(60) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 60
+Warning (10034): Output port "ADC_SCLK" at DE1_SOC_golden_top.sv(62) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 62
+Warning (10034): Output port "AUD_DACDAT" at DE1_SOC_golden_top.sv(72) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 72
+Warning (10034): Output port "AUD_XCK" at DE1_SOC_golden_top.sv(74) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 74
+Warning (10034): Output port "DRAM_CAS_N" at DE1_SOC_golden_top.sv(102) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 102
+Warning (10034): Output port "DRAM_CKE" at DE1_SOC_golden_top.sv(103) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 103
+Warning (10034): Output port "DRAM_CLK" at DE1_SOC_golden_top.sv(104) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 104
+Warning (10034): Output port "DRAM_CS_N" at DE1_SOC_golden_top.sv(105) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 105
+Warning (10034): Output port "DRAM_LDQM" at DE1_SOC_golden_top.sv(107) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 107
+Warning (10034): Output port "DRAM_RAS_N" at DE1_SOC_golden_top.sv(108) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 108
+Warning (10034): Output port "DRAM_UDQM" at DE1_SOC_golden_top.sv(109) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 109
+Warning (10034): Output port "DRAM_WE_N" at DE1_SOC_golden_top.sv(110) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 110
+Warning (10034): Output port "FAN_CTRL" at DE1_SOC_golden_top.sv(115) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 115
+Warning (10034): Output port "FPGA_I2C_SCLK" at DE1_SOC_golden_top.sv(120) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 120
+Warning (10034): Output port "IRDA_TXD" at DE1_SOC_golden_top.sv(200) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 200
+Warning (10034): Output port "TD_RESET_N" at DE1_SOC_golden_top.sv(231) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 231
+Warning (10034): Output port "VGA_BLANK_N" at DE1_SOC_golden_top.sv(238) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 238
+Warning (10034): Output port "VGA_CLK" at DE1_SOC_golden_top.sv(239) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 239
+Warning (10034): Output port "VGA_HS" at DE1_SOC_golden_top.sv(241) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 241
+Warning (10034): Output port "VGA_SYNC_N" at DE1_SOC_golden_top.sv(243) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 243
+Warning (10034): Output port "VGA_VS" at DE1_SOC_golden_top.sv(246) has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 246
+Info (12128): Elaborating entity "FechaduraTop" for hierarchy "FechaduraTop:comb_3" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 304
+Info (12128): Elaborating entity "divfreq" for hierarchy "FechaduraTop:comb_3|divfreq:DivisorDeFrequencia" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/fechaduratop.sv Line: 53
+Info (12128): Elaborating entity "resetHold5s" for hierarchy "FechaduraTop:comb_3|resetHold5s:ResetLogica" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/fechaduratop.sv Line: 61
+Warning (10230): Verilog HDL assignment warning at auxiliar.sv(614): truncated value with size 32 to match size of target (3) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 614
+Warning (10230): Verilog HDL assignment warning at auxiliar.sv(617): truncated value with size 32 to match size of target (26) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 617
+Info (12128): Elaborating entity "matrixKeyDecoder" for hierarchy "FechaduraTop:comb_3|matrixKeyDecoder:Teclado" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/fechaduratop.sv Line: 72
+Warning (10230): Verilog HDL assignment warning at auxiliar.sv(491): truncated value with size 32 to match size of target (2) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 491
+Info (12128): Elaborating entity "operacional" for hierarchy "FechaduraTop:comb_3|operacional:Operacional" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/fechaduratop.sv Line: 91
+Warning (10230): Verilog HDL assignment warning at operacional.sv(160): truncated value with size 32 to match size of target (10) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv Line: 160
+Warning (10230): Verilog HDL assignment warning at operacional.sv(167): truncated value with size 32 to match size of target (8) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv Line: 167
+Warning (10230): Verilog HDL assignment warning at operacional.sv(173): truncated value with size 32 to match size of target (16) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv Line: 173
+Warning (10230): Verilog HDL assignment warning at operacional.sv(181): truncated value with size 32 to match size of target (7) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv Line: 181
+Warning (10230): Verilog HDL assignment warning at operacional.sv(187): truncated value with size 32 to match size of target (7) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv Line: 187
+Info (12128): Elaborating entity "montar_pin" for hierarchy "FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv Line: 83
+Info (12128): Elaborating entity "verificar_senha" for hierarchy "FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv Line: 94
+Info (10264): Verilog HDL Case Statement information at auxiliar.sv(363): all case item expressions in this case statement are onehot File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 363
+Info (12128): Elaborating entity "update_master" for hierarchy "FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/operacional.sv Line: 102
+Info (12128): Elaborating entity "setup" for hierarchy "FechaduraTop:comb_3|setup:Setup" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/fechaduratop.sv Line: 106
+Warning (10230): Verilog HDL assignment warning at setup.sv(104): truncated value with size 32 to match size of target (4) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 104
+Warning (10230): Verilog HDL assignment warning at setup.sv(105): truncated value with size 32 to match size of target (4) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 105
+Warning (10230): Verilog HDL assignment warning at setup.sv(124): truncated value with size 32 to match size of target (4) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 124
+Warning (10230): Verilog HDL assignment warning at setup.sv(125): truncated value with size 32 to match size of target (4) File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 125
+Info (12128): Elaborating entity "SixDigit7SegCtrl" for hierarchy "FechaduraTop:comb_3|SixDigit7SegCtrl:Displays" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/fechaduratop.sv Line: 132
+Info (12128): Elaborating entity "BCDto7SEGMENT" for hierarchy "FechaduraTop:comb_3|SixDigit7SegCtrl:Displays|BCDto7SEGMENT:conv0" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/auxiliar.sv Line: 579
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "FechaduraTop:comb_3|setup:Setup|Mod3" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 125
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "FechaduraTop:comb_3|setup:Setup|Mod1" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 105
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "FechaduraTop:comb_3|setup:Setup|Div1" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 124
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "FechaduraTop:comb_3|setup:Setup|Mod2" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 124
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "FechaduraTop:comb_3|setup:Setup|Div0" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 104
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "FechaduraTop:comb_3|setup:Setup|Mod0" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 104
+Info (12130): Elaborated megafunction instantiation "FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod3" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 125
+Info (12133): Instantiated megafunction "FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod3" with the following parameter: File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 125
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_72m.tdf
+    Info (12023): Found entity 1: lpm_divide_72m File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/db/lpm_divide_72m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/db/sign_div_unsign_akh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
+    Info (12023): Found entity 1: alt_u_div_qse File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/db/alt_u_div_qse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "FechaduraTop:comb_3|setup:Setup|lpm_divide:Div1" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 124
+Info (12133): Instantiated megafunction "FechaduraTop:comb_3|setup:Setup|lpm_divide:Div1" with the following parameter: File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 124
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4am.tdf
+    Info (12023): Found entity 1: lpm_divide_4am File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/db/lpm_divide_4am.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod2" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 124
+Info (12133): Instantiated megafunction "FechaduraTop:comb_3|setup:Setup|lpm_divide:Mod2" with the following parameter: File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/setup.sv Line: 124
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[18]" and its non-tri-state driver. File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[20]" and its non-tri-state driver. File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[22]" and its non-tri-state driver. File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[24]" and its non-tri-state driver. File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO_1[10]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 70
+    Warning (13040): bidirectional pin "AUD_BCLK" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 71
+    Warning (13040): bidirectional pin "AUD_DACLRCK" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 73
+    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 106
+    Warning (13040): bidirectional pin "FPGA_I2C_SDAT" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 121
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 126
+    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[8]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[9]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[11]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[25]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[26]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[27]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[29]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[34]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "GPIO_1[35]" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 215
+    Warning (13040): bidirectional pin "PS2_CLK2" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 216
+    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 217
+    Warning (13040): bidirectional pin "PS2_DAT2" has no driver File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 218
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_1[18]~synth" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13010): Node "GPIO_1[20]~synth" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13010): Node "GPIO_1[22]~synth" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+    Warning (13010): Node "GPIO_1[24]~synth" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 127
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ADC_CONVST" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 59
+    Warning (13410): Pin "ADC_DIN" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 60
+    Warning (13410): Pin "ADC_SCLK" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 62
+    Warning (13410): Pin "AUD_DACDAT" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 72
+    Warning (13410): Pin "AUD_XCK" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 74
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 100
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 101
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 101
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 102
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 103
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 104
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 105
+    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 107
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 108
+    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 109
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 110
+    Warning (13410): Pin "FAN_CTRL" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 115
+    Warning (13410): Pin "FPGA_I2C_SCLK" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 120
+    Warning (13410): Pin "IRDA_TXD" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 200
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 210
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 210
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 210
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 210
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 210
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 210
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 210
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 210
+    Warning (13410): Pin "TD_RESET_N" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 231
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 237
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 237
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 237
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 237
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 237
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 237
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 237
+    Warning (13410): Pin "VGA_B[7]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 237
+    Warning (13410): Pin "VGA_BLANK_N" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 238
+    Warning (13410): Pin "VGA_CLK" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 239
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 240
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 240
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 240
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 240
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 240
+    Warning (13410): Pin "VGA_G[5]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 240
+    Warning (13410): Pin "VGA_G[6]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 240
+    Warning (13410): Pin "VGA_G[7]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 240
+    Warning (13410): Pin "VGA_HS" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 241
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 242
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 242
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 242
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 242
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 242
+    Warning (13410): Pin "VGA_R[5]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 242
+    Warning (13410): Pin "VGA_R[6]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 242
+    Warning (13410): Pin "VGA_R[7]" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 242
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 243
+    Warning (13410): Pin "VGA_VS" is stuck at GND File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 246
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 36 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 28 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ADC_DOUT" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 61
+    Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 69
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 80
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 85
+    Warning (15610): No output dependent on input pin "CLOCK4_50" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 90
+    Warning (15610): No output dependent on input pin "IRDA_RXD" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 199
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 205
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 205
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 223
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 223
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 223
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 223
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 223
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 223
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 223
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 223
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 223
+    Warning (15610): No output dependent on input pin "TD_CLK27" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 228
+    Warning (15610): No output dependent on input pin "TD_DATA[0]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 229
+    Warning (15610): No output dependent on input pin "TD_DATA[1]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 229
+    Warning (15610): No output dependent on input pin "TD_DATA[2]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 229
+    Warning (15610): No output dependent on input pin "TD_DATA[3]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 229
+    Warning (15610): No output dependent on input pin "TD_DATA[4]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 229
+    Warning (15610): No output dependent on input pin "TD_DATA[5]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 229
+    Warning (15610): No output dependent on input pin "TD_DATA[6]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 229
+    Warning (15610): No output dependent on input pin "TD_DATA[7]" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 229
+    Warning (15610): No output dependent on input pin "TD_HS" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 230
+    Warning (15610): No output dependent on input pin "TD_VS" File: C:/Users/joaov/OneDrive/Documentos/fechaduratop/DE1_SOC_golden_top.sv Line: 232
+Info (21057): Implemented 1252 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 32 input pins
+    Info (21059): Implemented 113 output pins
+    Info (21060): Implemented 96 bidirectional pins
+    Info (21061): Implemented 1011 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 244 warnings
+    Info: Peak virtual memory: 4855 megabytes
+    Info: Processing ended: Sat Aug 30 13:47:19 2025
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:36
+
+

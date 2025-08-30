@@ -1,0 +1,165 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -8.649
+TNS   : -1648.998
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -5.012
+TNS   : -294.217
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : -2.186
+TNS   : -36.974
+
+Type  : Slow 1100mV 85C Model Hold 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : 0.273
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -3.975
+TNS   : -973.090
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -2.286
+TNS   : -146.033
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.631
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : 1.812
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.758
+TNS   : -76.975
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -0.499
+TNS   : -300.260
+
+Type  : Slow 1100mV 0C Model Setup 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -8.961
+TNS   : -1631.602
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -5.086
+TNS   : -280.990
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : -2.352
+TNS   : -40.797
+
+Type  : Slow 1100mV 0C Model Hold 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : 0.277
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -3.785
+TNS   : -928.414
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -1.945
+TNS   : -123.530
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.288
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : 1.730
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.802
+TNS   : -70.215
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -0.463
+TNS   : -289.615
+
+Type  : Fast 1100mV 85C Model Setup 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -4.446
+TNS   : -845.165
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -3.174
+TNS   : -143.182
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : -1.229
+TNS   : -20.750
+
+Type  : Fast 1100mV 85C Model Hold 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : 0.089
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -2.345
+TNS   : -540.767
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -1.507
+TNS   : -95.455
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : 0.961
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.864
+TNS   : -51.495
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -0.232
+TNS   : -44.599
+
+Type  : Fast 1100mV 0C Model Setup 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -3.955
+TNS   : -756.558
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -2.661
+TNS   : -118.535
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : -1.286
+TNS   : -22.503
+
+Type  : Fast 1100mV 0C Model Hold 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : 0.077
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -2.023
+TNS   : -464.520
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -1.135
+TNS   : -71.536
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.110
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : 0.876
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.887
+TNS   : -61.383
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'FechaduraTop:comb_3|divfreq:DivisorDeFrequencia|clk_i'
+Slack : -0.139
+TNS   : -19.655
+
+------------------------------------------------------------

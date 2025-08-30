@@ -1,0 +1,19 @@
+
+
+module setup(
+	input		logic 		clk, 
+	input 	logic 		rst,
+	input 	logic 		key_valid,
+	input		logic [3:0] key_code,
+	output 	bcdPac_t 	bcd_out,
+	output 	logic 		bcd_enable,
+	output 	setupPac_t 	data_setup_new,
+	input 	setupPac_t 	data_setup_old,
+	input 	logic 		setup_on,
+	output	logic 		setup_end
+	 );
+ 
+ 
+ // complete o código
+
+endmodule

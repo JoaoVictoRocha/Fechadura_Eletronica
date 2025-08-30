@@ -1,0 +1,86 @@
+
+State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|setup:Setup|state
+Name state.S_DONE state.S_PIN4_SHOW_VAL state.S_PIN4_WAIT_ACT state.S_PIN4_SHOW_ACT state.S_PIN3_SHOW_VAL state.S_PIN3_WAIT_ACT state.S_PIN3_SHOW_ACT state.S_PIN2_SHOW_VAL state.S_PIN2_WAIT_ACT state.S_PIN2_SHOW_ACT state.S_PIN1_SHOW_VAL state.S_TRAV_TIME_EDIT state.S_TRAV_TIME_SHOW state.S_BIP_TIME_EDIT state.S_BIP_TIME_SHOW state.S_BIP_TOGGLE_WAIT state.S_BIP_TOGGLE_SHOW state.S_LOAD_OLD state.S_IDLE 
+state.S_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.S_LOAD_OLD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.S_BIP_TOGGLE_SHOW 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.S_BIP_TOGGLE_WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.S_BIP_TIME_SHOW 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.S_BIP_TIME_EDIT 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.S_TRAV_TIME_SHOW 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.S_TRAV_TIME_EDIT 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.S_PIN1_SHOW_VAL 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.S_PIN2_SHOW_ACT 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.S_PIN2_WAIT_ACT 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.S_PIN2_SHOW_VAL 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.S_PIN3_SHOW_ACT 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_PIN3_WAIT_ACT 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_PIN3_SHOW_VAL 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_PIN4_SHOW_ACT 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_PIN4_WAIT_ACT 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_PIN4_SHOW_VAL 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_DONE 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|estado
+Name estado.ESPERA_FALHA estado.FALHA estado.UPDATE_MASTER estado.PORTA_FECHADA estado.PORTA_ABERTA estado.TRAVA_ON estado.TRAVA_OFF estado.SETUP estado.ESPERA estado.VERIFICAR_SENHA estado.MONTAR_PIN estado.RESETADO 
+estado.RESETADO 0 0 0 0 0 0 0 0 0 0 0 0 
+estado.MONTAR_PIN 0 0 0 0 0 0 0 0 0 0 1 1 
+estado.VERIFICAR_SENHA 0 0 0 0 0 0 0 0 0 1 0 1 
+estado.ESPERA 0 0 0 0 0 0 0 0 1 0 0 1 
+estado.SETUP 0 0 0 0 0 0 0 1 0 0 0 1 
+estado.TRAVA_OFF 0 0 0 0 0 0 1 0 0 0 0 1 
+estado.TRAVA_ON 0 0 0 0 0 1 0 0 0 0 0 1 
+estado.PORTA_ABERTA 0 0 0 0 1 0 0 0 0 0 0 1 
+estado.PORTA_FECHADA 0 0 0 1 0 0 0 0 0 0 0 1 
+estado.UPDATE_MASTER 0 0 1 0 0 0 0 0 0 0 0 1 
+estado.FALHA 0 1 0 0 0 0 0 0 0 0 0 1 
+estado.ESPERA_FALHA 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|update_master:atualizar|ESTADO_ATUAL
+Name ESTADO_ATUAL.FINAL ESTADO_ATUAL.TEMP ESTADO_ATUAL.ATUALIZAR ESTADO_ATUAL.INICIAL 
+ESTADO_ATUAL.INICIAL 0 0 0 0 
+ESTADO_ATUAL.ATUALIZAR 0 0 1 1 
+ESTADO_ATUAL.TEMP 0 1 0 1 
+ESTADO_ATUAL.FINAL 1 0 0 1 
+
+State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado_ant
+Name estado_ant.TEMP estado_ant.HOLD_FLAGS estado_ant.PIN_VALID estado_ant.UPDATE_FLAG estado_ant.PIN_FLAG estado_ant.SETUP_FLAG estado_ant.FAIL_FLAG estado_ant.MASTER_VALID estado_ant.MASTER_OK estado_ant.MASTER_UPDATE estado_ant.CHECK_PIN estado_ant.VERIFICAR estado_ant.ESPERA estado_ant.RESETADO 
+estado_ant.RESETADO 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+estado_ant.ESPERA 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+estado_ant.VERIFICAR 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+estado_ant.CHECK_PIN 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+estado_ant.MASTER_UPDATE 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+estado_ant.MASTER_OK 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+estado_ant.MASTER_VALID 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+estado_ant.FAIL_FLAG 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+estado_ant.SETUP_FLAG 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+estado_ant.PIN_FLAG 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+estado_ant.UPDATE_FLAG 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+estado_ant.PIN_VALID 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+estado_ant.HOLD_FLAGS 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+estado_ant.TEMP 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|verificar_senha:verifica|estado
+Name estado.TEMP estado.HOLD_FLAGS estado.PIN_VALID estado.UPDATE_FLAG estado.PIN_FLAG estado.SETUP_FLAG estado.FAIL_FLAG estado.MASTER_VALID estado.MASTER_OK estado.MASTER_UPDATE estado.CHECK_PIN estado.VERIFICAR estado.ESPERA estado.RESETADO 
+estado.RESETADO 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+estado.ESPERA 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+estado.VERIFICAR 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+estado.CHECK_PIN 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+estado.MASTER_UPDATE 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+estado.MASTER_OK 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+estado.MASTER_VALID 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+estado.FAIL_FLAG 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+estado.SETUP_FLAG 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+estado.PIN_FLAG 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+estado.UPDATE_FLAG 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+estado.PIN_VALID 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+estado.HOLD_FLAGS 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+estado.TEMP 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE1_SOC_golden_top|FechaduraTop:comb_3|operacional:Operacional|montar_pin:montar|ESTADO_ATUAL
+Name ESTADO_ATUAL.HOLD_STATUS ESTADO_ATUAL.STATUS_TRUE ESTADO_ATUAL.DIGITO_LIDO ESTADO_ATUAL.INICIAL ESTADO_ATUAL.TEMP 
+ESTADO_ATUAL.INICIAL 0 0 0 0 0 
+ESTADO_ATUAL.DIGITO_LIDO 0 0 1 1 0 
+ESTADO_ATUAL.STATUS_TRUE 0 1 0 1 0 
+ESTADO_ATUAL.HOLD_STATUS 1 0 0 1 0 
+ESTADO_ATUAL.TEMP 0 0 0 1 1 

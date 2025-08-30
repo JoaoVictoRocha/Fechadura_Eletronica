@@ -1,0 +1,132 @@
+/*
+pinPacked_t
+
+Tipo de dado usado para empacotar as informações do pin, 
+ou seja seu valor e se o mesmo se encontra ativo, inativo e seu valor.
+*/
+
+
+typedef struct packed {
+	logic 		status;
+	logic [3:0] digit1;
+	logic [3:0] digit2;
+	logic [3:0] digit3;
+	logic [3:0] digit4;
+} pinPac_t;
+
+
+/*
+setupPac_t
+
+Tipo de dado usado para empacotar as informações 
+transmitidas entre o módulo de setup e o modulo operacional.
+
+*/
+typedef struct packed {
+	logic 		bip_status;
+	logic [6:0] bip_time;
+	logic [6:0] tranca_aut_time;
+	pinPac_t 	master_pin;
+	pinPac_t 	pin1;
+	pinPac_t 	pin2;
+	pinPac_t 	pin3;
+	pinPac_t 	pin4;
+	
+} setupPac_t;
+
+
+
+/*
+bcdPacked_t
+
+Tipo de dado usado para empacotar os valores dos displays no formato BCD.
+*/
+typedef struct packed {
+	logic [3:0] BCD0;
+	logic [3:0] BCD1;
+	logic [3:0] BCD2;
+	logic [3:0] BCD3;
+	logic [3:0] BCD4;
+	logic [3:0] BCD5;
+} bcdPac_t;
+
+
+
+
+module divfreq(input reset, clock, output logic clk_i);
+
+  int cont;
+
+  always @(posedge clock or posedge reset) begin
+    if(reset) begin
+      cont  = 0;
+      clk_i = 0;
+    end
+    else
+      if( cont <= 25000 )
+        cont++;
+      else begin
+        clk_i = ~clk_i;
+        cont = 0;
+      end
+  end
+endmodule
+
+
+module BCDto7SEGMENT( input logic[3:0] bcd, output logic [6:0] Seg );
+
+always begin
+	 case(bcd) 
+		   4'b0000 : Seg = 7'b1000000;
+			4'b0001 : Seg = 7'b1111001;
+			4'b0010 : Seg = 7'b0100100;
+			4'b0011 : Seg = 7'b0110000;
+			4'b0100 : Seg = 7'b0011001;
+			4'b0101 : Seg = 7'b0010010;
+			4'b0110 : Seg = 7'b0000010;
+			4'b0111 : Seg = 7'b1111000;
+			4'b1000 : Seg = 7'b0000000;
+			4'b1001 : Seg = 7'b0011000;      
+         4'b1010 : Seg = 7'b0001000;
+			4'b1011 : Seg = 7'b0000011;
+			4'b1100 : Seg = 7'b1000110;
+			4'b1101 : Seg = 7'b0100001;
+			4'b1110 : Seg = 7'b0000110;		
+			4'b1111 : Seg = 7'b0001110;
+	 endcase
+ end
+endmodule
+
+
+
+
+module matrixKeyDecoder (
+input clk, reset,
+input 	logic [3:0] col_matrix,
+output 	logic [3:0] lin_matrix,
+output 	logic [3:0] tecla_value,
+output	logic tecla_valid);
+
+
+//  Complemente o código
+
+endmodule
+
+
+
+
+module SixDigit7SegCtrl (
+input logic clk, 
+input logic rst,
+input logic enable,
+input bcdPac_t bcd_packet,
+output logic [6:0] HEX0, HEX1,HEX2, HEX3, HEX4, HEX5
+);
+
+//  Complemente o código
+
+endmodule
+
+
+
+
